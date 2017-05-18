@@ -1,0 +1,17 @@
+.avatar-border {
+    border: 2px lightblue solid;
+}
+
+.person-data {
+}
+
+.person-card {
+    border: 4px lightgray outset;
+    border-radius: 10px;
+    padding: 3px;
+    background-color: #FAFAFA;
+}
+
+.person-row {
+    margin-top: 15px;
+}

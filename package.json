@@ -1,0 +1,42 @@
+{
+  "name": "sp-react-demos",
+  "version": "1.0.0",
+  "description": "Speeding Planet's React Class Demos",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "training"
+  ],
+  "author": "John Paxton <pax@speedingplanet.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "react-scripts": "0.9.5"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "chai": "3.x",
+    "chai-enzyme": "^0.6.1",
+    "enzyme": "^2.8.2",
+    "font-awesome": "^4.7.0",
+    "immutable": "^3.8.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "morgan": "^1.8.1",
+    "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "next",
+    "react-test-renderer": "^15.5.4",
+    "redux": "^3.6.0",
+    "redux-mock-store": "^1.2.3"
+  }
+}
