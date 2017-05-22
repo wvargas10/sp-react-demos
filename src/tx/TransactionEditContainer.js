@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import moment from 'moment';
 import {tx} from '../../data/class-data';
 import TransactionEdit from './TransactionEdit';
 
@@ -28,7 +29,17 @@ class TransactionEditContainer extends Component {
 
   handleSave(txData) {
     console.debug('Invoked TransactionEditContainer.handleSave()');
-    console.log('txData: ', txData);
+
+    let editedTx = tx.get(txData.id);
+
+    editedTx.payeeId = txData.payeeId;
+    editedTx.accountId = txData.accountId;
+    editedTx.categoryId = txData.categoryId;
+    editedTx.txType = txData.txType;
+    editedTx.txDate = moment(txData.txDate).toISOString();
+    editedTx.amount = txData.amount;
+
+
   }
 
   render() {

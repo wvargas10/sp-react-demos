@@ -108,16 +108,6 @@ class TransactionEdit extends Component {
                            onChange={this.handleChange}
                            className="form-control"
           />
-{/*
-          <CustomDropDown options={this.staticData.txTypes}
-                          label="typeName"
-                          name="txType"
-                          placeholder="Select a type of tx"
-                          onChange={this.handleChange}
-                          defaultValue={this.props.tx.txType}
-                          className="form-control"
-          />
-*/}
         </div>
         <div>
           <button className="btn btn-default" onClick={this.handleSave}>Save</button>

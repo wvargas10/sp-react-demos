@@ -58,7 +58,7 @@ let categoriesData = [
   }
 ];
 let staticData = {
-  "txTypes"       : [
+  "txTypes"           : [
     {
       "id"      : 1,
       "typeName": "Credit"
@@ -76,13 +76,13 @@ let staticData = {
       "typeName": "Withdrawal"
     }
   ],
-  "getTransactionType": function(id) {
-    return this.txTypes.find( txType => txType.id === id)
+  "getTransactionType": function( id ) {
+    return this.txTypes.find( txType => txType.id === id )
   },
-  "getAccountType": function(id) {
+  "getAccountType"    : function( id ) {
     return this.accountTypes.find( accountType => accountType.id === id );
   },
-  "accountTypes"  : [
+  "accountTypes"      : [
     {
       "id"             : 1,
       "accountTypeName": "Checking",
@@ -16101,7 +16101,20 @@ let tx = {
     return tmpTx;
   },
 
-  size: () => txData.length
+  size: () => txData.length,
+
+  update: tx => {
+    let pos = -1;
+    let toBeUpdated = txData.find( ( tx, idx ) => {
+      pos = idx;
+      return tx.id === Number( id );
+    } );
+    let updated = Object.assign( {}, toBeUpdated, tx );
+
+    // Make sure the id never changes
+    updated.id = toBeUpdated.id;
+    txData[pos] = updated;
+  }
 
 };
 

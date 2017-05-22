@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
-  Link
+  NavLink
 } from 'react-router-dom';
 
 // Import Bootstrap, make it available to all sub-components
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/css/bootstrap-theme.css';
+import './css/local.css'
 
 import {tx, people} from '../data/class-data';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
@@ -15,6 +16,8 @@ import TransactionDetailContainer from './tx/TransactionDetailContainer';
 import TransactionSearch from './tx/TransactionSearch';
 import Demos from './Demos';
 import TransactionEditContainer from './tx/TransactionEditContainer';
+import FunctionalPropsContainer from './demos/FunctionalPropsContainer';
+import ClassPropsContainer from './demos/ClassPropsContainer';
 
 class App extends Component {
   constructor() {
@@ -43,7 +46,17 @@ class App extends Component {
       },
       {
         path     : '/demos',
-        component: Demos
+        component: Demos,
+        routes   : [
+          {
+            path: '/demos/functional-props',
+            component: FunctionalPropsContainer
+          },
+          {
+            path: '/demos/class-props',
+            component: ClassPropsContainer
+          }
+        ]
       }
     ];
 
@@ -54,14 +67,23 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <ul>
-            <li><Link to="/tx">Transactions</Link></li>
-            <li><Link to="/demos">Demos</Link></li>
-          </ul>
+          <nav className="navbar navbar-default">
+            <div className="navbar-header">
+              <a href="#" className="navbar-brand">Banking</a>
+            </div>
+            <div className="collapse navbar-collapse">
+              <ul className="nav navbar-nav">
+                <li><NavLink activeClassName="active" to="/tx">Transactions</NavLink></li>
+                <li><NavLink activeClassName="active" to="/demos">Demos</NavLink></li>
+              </ul>
+            </div>
+          </nav>
 
-          {this.routes.map( ( route, index ) => (
-            <RouteWithSubRoutes key={index} {...route}/>
-          ) )}
+          <div>
+            {this.routes.map( ( route, index ) => (
+              <RouteWithSubRoutes key={index} {...route}/>
+            ) )}
+          </div>
         </div>
       </Router>
     );
