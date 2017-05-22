@@ -1,0 +1,99 @@
+exports[`test CustomDropDown placeholder snapshot 1`] = `
+<select
+  onChange={[Function]}>
+  <option
+    value="">
+    Select a person
+  </option>
+  <option
+    value={201}>
+    Sparks
+  </option>
+  <option
+    value={202}>
+    Trent
+  </option>
+  <option
+    value={203}>
+    Hawksmoor
+  </option>
+  <option
+    value={204}>
+    Thornedike
+  </option>
+  <option
+    value={205}>
+    Cortez
+  </option>
+  <option
+    value={206}>
+    Li-Min
+  </option>
+  <option
+    value={207}>
+    Jerusalem
+  </option>
+  <option
+    value={208}>
+    Wagner
+  </option>
+  <option
+    value={209}>
+    Snow
+  </option>
+  <option
+    value={210}>
+    Chase
+  </option>
+</select>
+`;
+
+exports[`test CustomDropDown snapshot test 1`] = `
+<select
+  onChange={[Function]}>
+  <option
+    value="">
+    Please select an item below
+  </option>
+  <option
+    value={201}>
+    Sparks
+  </option>
+  <option
+    value={202}>
+    Trent
+  </option>
+  <option
+    value={203}>
+    Hawksmoor
+  </option>
+  <option
+    value={204}>
+    Thornedike
+  </option>
+  <option
+    value={205}>
+    Cortez
+  </option>
+  <option
+    value={206}>
+    Li-Min
+  </option>
+  <option
+    value={207}>
+    Jerusalem
+  </option>
+  <option
+    value={208}>
+    Wagner
+  </option>
+  <option
+    value={209}>
+    Snow
+  </option>
+  <option
+    value={210}>
+    Chase
+  </option>
+</select>
+`;

@@ -1,13 +1,14 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
+import renderer from 'react-test-renderer';
 import CustomDropDown from '../CustomDropDown';
 import {people} from '../../../data/class-data';
 
 let personList;
 
-beforeEach(() => {
+beforeEach( () => {
   personList = people.list();
-});
+} );
 
 test( 'CustomDropDown single labels render correctly', () => {
   const dropDown = shallow(
@@ -17,7 +18,7 @@ test( 'CustomDropDown single labels render correctly', () => {
   expect( dropDown.text() ).toMatch( new RegExp( personList[ 0 ].lastName ) );
 
   // Negative confirmation
-  expect(dropDown.text()).not.toMatch(/Paxton/);
+  expect( dropDown.text() ).not.toMatch( /Paxton/ );
 } );
 
 test( 'CustomDropDown multiple labels render correctly', () => {
@@ -25,8 +26,51 @@ test( 'CustomDropDown multiple labels render correctly', () => {
     <CustomDropDown idField="id" label="firstName lastName" options={personList}/>
   );
 
-  expect( dropDown.text() ).toMatch( new RegExp( `${personList[ 0 ].firstName} ${personList[0].lastName}` ) );
+  expect( dropDown.text() ).toMatch( new RegExp( `${personList[ 0 ].firstName} ${personList[ 0 ].lastName}` ) );
 
   // Negative confirmation
-  expect(dropDown.text()).not.toMatch(/Paxton/);
-})
+  expect( dropDown.text() ).not.toMatch( /Paxton/ );
+} );
+
+it( 'CustomDropDown selections work', () => {
+  const dropDown = shallow(
+    <CustomDropDown idField="id" label="lastName" options={personList}/>
+  );
+
+  const select = dropDown.find( 'select' );
+  select.simulate( 'change', { target: { value: '203' } } );
+
+  expect(dropDown.state('value')).toEqual('203');
+
+} );
+
+it('CustomDropDown defaultValue test', () => {
+  const dropDown = shallow(
+    <CustomDropDown idField="id" label="lastName" options={personList} defaultValue="203"/>
+  );
+
+  expect(dropDown.state('value')).toEqual('203');
+});
+
+// Snapshot test
+it('CustomDropDown snapshot test', () => {
+  const tree = renderer
+    .create(<CustomDropDown idField="id" label="lastName" options={personList} defaultValue="203"/>)
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+
+});
+
+it('CustomDropDown placeholder snapshot', () => {
+  const tree = renderer
+    .create(<CustomDropDown idField="id"
+                            label="lastName"
+                            options={personList}
+                            defaultValue="203"
+                            placeholder="Select a person"/>)
+    .toJSON();
+
+  expect(tree).toMatchSnapshot();
+
+});

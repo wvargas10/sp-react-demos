@@ -1,30 +1,131 @@
-import React from 'react';
-/*
- {
- "id": 1,
- "payeeId": 1,
- "personId": 201,
- "categoryId": 102,
- "accountId": 1,
- "txType": "2",
- "txDate": "2016-06-01T04:00:00.000Z",
- "amount": -1600
- },
- */
+import React, {Component} from 'react';
+import DateField from '../DateField';
+import PayeesDropDown from '../PayeesDropDown';
+import CategoriesDropDown from '../CategoriesDropDown';
+import AccountsDropDown from '../AccountsDropDown';
+import TxTypesDropDown from './TxTypesDropDown';
 
+class TransactionEdit extends Component {
 
-function TransactionEdit( props ) {
-  return (
-    <section>
-    <h3>Transaction Edit</h3>
+  constructor( props ) {
+    super( props );
+
+    this.state = {
+      id        : props.tx.id,
+      firstName : props.tx.person.firstName,
+      lastName  : props.tx.person.lastName,
+      personId  : props.tx.person.id,
+      payeeId   : props.tx.payeeId,
+      accountId : props.tx.accountId,
+      amount    : props.tx.amount,
+      categoryId: props.tx.categoryId,
+      txDate    : props.tx.txDate,
+      txType    : props.tx.txType
+    };
+
+    this.handleChange = this.handleChange.bind( this );
+    this.handleSave = this.handleSave.bind( this );
+  }
+
+  handleSave( event ) {
+    event.preventDefault();
+    this.props.onSave( this.state );
+  }
+
+  handleChange( event ) {
+    console.debug( 'TransactionEdit#handleChange with event: ', event );
+    let data = {};
+    data[ event.target.name ] = event.target.value;
+    this.setState( data )
+  }
+
+  render() {
+    return (
       <form>
+        <h3>Editing transaction {this.state.id}</h3>
+        <div className="form-group">
+          <label htmlFor="firstName">First Name: </label>
+          <input className="form-control"
+                 type="text"
+                 name="firstName"
+                 value={this.state.firstName}
+                 onChange={this.handleChange}/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="lastName">Last Name: </label>
+          <input className="form-control"
+                 type="text"
+                 name="lastName"
+                 value={this.state.lastName}
+                 onChange={this.handleChange}/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="payee">Payee: </label>
+          <PayeesDropDown value={this.state.payeeId}
+                          name="payeeId"
+                          className="form-control"
+                          onChange={this.handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="account">Account: </label>
+          <AccountsDropDown value={this.state.accountId}
+                            personId={this.state.personId}
+                            name="accountId"
+                            className="form-control"
+                            onChange={this.handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="amount">Amount: </label>
+          <input className="form-control"
+                 type="number"
+                 name="amount"
+                 step="0.01"
+                 value={this.state.amount}
+                 onChange={this.handleChange}/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="category">Category: </label>
+          <CategoriesDropDown value={this.state.categoryId}
+                              name="categoryId"
+                              className="form-control"
+                              onChange={this.handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="date">Date: </label>
+          <DateField selectedDate={this.state.txDate}
+                     className="form-control"
+                     name="txDate"
+                     onBlur={this.handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="type">Type: </label>
+          <TxTypesDropDown value={this.state.txType}
+                           name="txType"
+                           onChange={this.handleChange}
+                           className="form-control"
+          />
+{/*
+          <CustomDropDown options={this.staticData.txTypes}
+                          label="typeName"
+                          name="txType"
+                          placeholder="Select a type of tx"
+                          onChange={this.handleChange}
+                          defaultValue={this.props.tx.txType}
+                          className="form-control"
+          />
+*/}
+        </div>
         <div>
-          <label htmlFor="tx-amount">Amount: </label>
-          <input type="number" name="tx-amount" id="tx-amount"/>
+          <button className="btn btn-default" onClick={this.handleSave}>Save</button>
         </div>
       </form>
-    </section>
-  );
+    );
+  }
+
 }
 
 export default TransactionEdit;

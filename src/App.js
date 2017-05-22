@@ -12,11 +12,9 @@ import {tx, people} from '../data/class-data';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
 import Transactions from './tx/Transactions';
 import TransactionDetailContainer from './tx/TransactionDetailContainer';
-import TransactionEdit from './tx/TransactionEdit';
 import TransactionSearch from './tx/TransactionSearch';
 import Demos from './Demos';
-
-
+import TransactionEditContainer from './tx/TransactionEditContainer';
 
 class App extends Component {
   constructor() {
@@ -35,7 +33,7 @@ class App extends Component {
           },
           {
             path     : '/tx/edit/:id',
-            component: TransactionEdit
+            component: TransactionEditContainer
           },
           {
             path     : '/tx/search',

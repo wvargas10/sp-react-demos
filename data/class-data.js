@@ -1,3 +1,5 @@
+let _filter = require( 'lodash/filter' );
+
 let categoriesData = [
   {
     "id"          : 1,
@@ -56,7 +58,7 @@ let categoriesData = [
   }
 ];
 let staticData = {
-  "txTypes"     : [
+  "txTypes"       : [
     {
       "id"      : 1,
       "typeName": "Credit"
@@ -74,7 +76,13 @@ let staticData = {
       "typeName": "Withdrawal"
     }
   ],
-  "accountTypes": [
+  "getTransactionType": function(id) {
+    return this.txTypes.find( txType => txType.id === id)
+  },
+  "getAccountType": function(id) {
+    return this.accountTypes.find( accountType => accountType.id === id );
+  },
+  "accountTypes"  : [
     {
       "id"             : 1,
       "accountTypeName": "Checking",
@@ -16039,38 +16047,52 @@ let payees = {
     return tmpPayee;
   },
 
-  size: () => this.payeesData.length
+  size: () => payeesData.length,
+
+  list: () => [ ...payeesData ]
 };
 
 let accounts = {
   get: id => {
     let tmpAccount = accountsData.find( account => account.id === id );
     tmpAccount.person = people.get( tmpAccount.personId );
-    tmpAccount.accountType = staticData.accountTypes[ tmpAccount.accountTypeId ];
+    tmpAccount.accountType = staticData.getAccountType( tmpAccount.accountTypeId );
     tmpAccount.accountName = tmpAccount.accountType.accountTypeName;
     return tmpAccount;
   },
 
-  size: () => this.accountsData.length,
+  size: () => accountsData.length,
+
+  list: ( criteria ) => {
+    let accounts = _filter( accountsData, criteria );
+
+    return accounts.map( account => {
+      account.accountType = staticData.getAccountType( account.accountTypeId );
+      account.accountName = account.accountType.accountTypeName;
+      return account;
+    } )
+  }
 };
 
 let people = {
-  get: id => peopleData.find( person => person.id === Number(id) ),
+  get: id => peopleData.find( person => person.id === Number( id ) ),
 
   size: () => peopleData.length,
 
-  list: () => [...peopleData]
+  list: () => [ ...peopleData ]
 };
 
 let categories = {
-  get: id => categoriesData.find( category => category.id === Number(id) ),
+  get: id => categoriesData.find( category => category.id === Number( id ) ),
 
-  size: () => this.categoriesData.length
+  size: () => categoriesData.length,
+
+  list: () => [ ...categoriesData ]
 };
 
 let tx = {
   get: id => {
-    let tmpTx = txData.find( tx => tx.id === Number(id) );
+    let tmpTx = txData.find( tx => tx.id === Number( id ) );
     tmpTx.person = people.get( tmpTx.personId );
     tmpTx.account = accounts.get( tmpTx.accountId );
     tmpTx.payee = payees.get( tmpTx.payeeId );
