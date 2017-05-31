@@ -9,6 +9,7 @@ function Demos( { routes } ) {
       <ul>
         <li><Link to="/demos/functional-props">Functional Component with props</Link></li>
         <li><Link to="/demos/class-props">Class Component with props</Link></li>
+        <li><Link to="/demos/passing-data">Passing Data</Link></li>
       </ul>
 
       <div className="row">

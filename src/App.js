@@ -18,6 +18,7 @@ import Demos from './Demos';
 import TransactionEditContainer from './tx/TransactionEditContainer';
 import FunctionalPropsContainer from './demos/FunctionalPropsContainer';
 import ClassPropsContainer from './demos/ClassPropsContainer';
+import PassingData from './demos/PassingData';
 
 class App extends Component {
   constructor() {
@@ -55,6 +56,10 @@ class App extends Component {
           {
             path: '/demos/class-props',
             component: ClassPropsContainer
+          },
+          {
+            path: '/demos/passing-data',
+            component: PassingData
           }
         ]
       }
