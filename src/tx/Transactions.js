@@ -11,11 +11,14 @@ class Transactions extends Component {
 
     this.state = {
       currentView: 'list',
-      tx         : defaultTx
+      tx         : defaultTx,
+      txList     : txDAO.list()
     };
 
     this.handleRowClick = this.handleRowClick.bind( this );
-    this.backToList= this.backToList.bind( this );
+    this.backToList = this.backToList.bind( this );
+    this.getNextTx = this.getNextTx.bind( this );
+    this.getPreviousTx = this.getPreviousTx.bind( this );
   }
 
   handleRowClick( tx ) {
@@ -26,6 +29,29 @@ class Transactions extends Component {
     } );
   }
 
+  getNextTx() {
+    let { tx, txList } = this.state;
+    let pos = Math.min( txList.length - 1, txList.indexOf( tx ) + 1 );
+
+    if ( txList[pos] ) {
+      this.setState( {
+        tx: txList[pos]
+      } );
+    }
+  }
+
+  getPreviousTx() {
+    let { tx, txList } = this.state;
+    let pos = Math.max( 0, txList.indexOf( tx ) - 1 );
+
+    if ( txList[pos] ) {
+      this.setState( {
+        tx: txList[pos]
+      } );
+    }
+  }
+
+
   backToList() {
     this.setState( { currentView: 'list' } )
   }
@@ -34,7 +60,7 @@ class Transactions extends Component {
     let view = (
       <div className="row">
         <div className="col-md-12">
-          <TransactionList txList={txDAO.list()} onRowClick={this.handleRowClick}/>;
+          <TransactionList txList={this.state.txList} onRowClick={this.handleRowClick}/>;
         </div>
       </div>
     );
@@ -47,10 +73,15 @@ class Transactions extends Component {
               <TransactionDetail tx={this.state.tx}/>
             </div>
           </div>
-          <div className="col-md-2 col-md-offset-5">
-            <div className="text-center">
-              <button className="btn btn-default" onClick={this.backToList}>Return to List
-              </button>
+          <div className="row">
+            <div className="col-md-6 col-md-offset-3">
+              <div className="text-center">
+                <div className="btn-group">
+                  <button className="btn btn-default" onClick={this.getPreviousTx}>&laquo; Previous</button>
+                  <button className="btn btn-default" onClick={this.backToList}>Return to List</button>
+                  <button className="btn btn-default" onClick={this.getNextTx}>Next &raquo;</button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
