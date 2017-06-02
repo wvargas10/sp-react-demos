@@ -10,7 +10,7 @@ function TransactionDetail( props ) {
         <ul className="list-group">
           <li className="list-group-item">Payor: {props.tx.person.firstName} {props.tx.person.lastName}</li>
           <li className="list-group-item">Payee: {props.tx.payee.payeeName}</li>
-          <li className="list-group-item">From: {props.tx.account.accountName}</li>
+          <li className="list-group-item">From: {props.tx.account.accountType.accountTypeName}</li>
           <li className="list-group-item">Amount: <CurrencyFormatter value={props.tx.amount} colors/></li>
           <li className="list-group-item">Category: {props.tx.category.categoryName}</li>
         </ul>
