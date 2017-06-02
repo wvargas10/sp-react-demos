@@ -16,6 +16,10 @@
     margin-top: 15px;
 }
 
+.clickable-row {
+    cursor: pointer;
+}
+
 .navbar-default .navbar-nav  a.active,
 .navbar-default .navbar-nav  a.active:hover,
 .navbar-default .navbar-nav  a.active:focus {
