@@ -10,42 +10,15 @@ import '../node_modules/bootstrap/dist/css/bootstrap-theme.css';
 import './css/local.css'
 
 import {txDAO, peopleDAO} from '../data/class-data';
+import routes from './routes';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
-import Transactions from './tx/Transactions';
-import Demos from './Demos';
-import FunctionalPropsContainer from './demos/FunctionalPropsContainer';
-import ClassPropsContainer from './demos/ClassPropsContainer';
-import PassingData from './demos/PassingData';
 
 class App extends Component {
   constructor() {
     super();
     this.numPeople = peopleDAO.size();
 
-    this.routes = [
-      {
-        path     : '/tx',
-        component: Transactions,
-      },
-      {
-        path     : '/demos',
-        component: Demos,
-        routes   : [
-          {
-            path: '/demos/functional-props',
-            component: FunctionalPropsContainer
-          },
-          {
-            path: '/demos/class-props',
-            component: ClassPropsContainer
-          },
-          {
-            path: '/demos/passing-data',
-            component: PassingData
-          }
-        ]
-      }
-    ];
+    this.routes = routes;
 
     console.log( 'There are %d transactions.', txDAO.size() );
   }

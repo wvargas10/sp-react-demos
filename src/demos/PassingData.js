@@ -4,7 +4,7 @@ import CustomFooter from './CustomFooter';
 function PassingData( props ) {
   return (
     <div>
-      <h2>Passing data to a component</h2>
+      <h3>Passing data to a component</h3>
       <CustomFooter companyName="The Super-Fake Banking Corporation"/>
     </div>
   );

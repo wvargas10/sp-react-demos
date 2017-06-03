@@ -5,21 +5,21 @@ import RouteWithSubRoutes from './RouteWithSubRoutes';
 function Demos( { routes } ) {
   return (
     <div>
-      <h3>List of Demos</h3>
-      <ul>
-        <li><Link to="/demos/functional-props">Functional Component with props</Link></li>
-        <li><Link to="/demos/class-props">Class Component with props</Link></li>
-        <li><Link to="/demos/passing-data">Passing Data</Link></li>
-      </ul>
-
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-3" style={{ borderRight: '2px solid black' }}>
+          <h3>Demos</h3>
+          <ul>
+            { routes.map( route => {
+              return <li><Link to={route.path}>{route.label}</Link></li>;
+            } ) }
+          </ul>
+        </div>
+        <div className="col-md-8">
           {routes.map( ( route, i ) => (
             <RouteWithSubRoutes key={i} {...route}/>
           ) )}
         </div>
       </div>
-
     </div>
   );
 }
