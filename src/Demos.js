@@ -9,8 +9,8 @@ function Demos( { routes } ) {
         <div className="col-md-3" style={{ borderRight: '2px solid black' }}>
           <h3>Demos</h3>
           <ul>
-            { routes.map( route => {
-              return <li><Link to={route.path}>{route.label}</Link></li>;
+            { routes.map( (route, i) => {
+              return <li key={i}><Link to={route.path}>{route.label}</Link></li>;
             } ) }
           </ul>
         </div>

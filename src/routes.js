@@ -3,6 +3,7 @@ import ClassPropsContainer from './demos/ClassPropsContainer';
 import PassingData from './demos/PassingData';
 import Transactions from './tx/Transactions';
 import Demos from './Demos';
+import ReduxCounter from './demos/ReduxCounter';
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
         path     : '/demos/passing-data',
         component: PassingData,
         label: 'Passing Data'
+      },
+      {
+        path: '/demos/redux-counter',
+        component: ReduxCounter,
+        label: 'Incremental counter with Redux'
       }
     ]
   }
