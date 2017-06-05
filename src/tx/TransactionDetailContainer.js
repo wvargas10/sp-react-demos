@@ -1,5 +1,5 @@
 import React from 'react';
-import {tx} from '../../data/class-data';
+import {txDAO} from '../data/class-data';
 import TransactionDetail from './TransactionDetail';
 
 function TransactionDetailContainer( props ) {
@@ -7,7 +7,7 @@ function TransactionDetailContainer( props ) {
   let displayTx = null;
 
   if ( props.match.params.id ) {
-    displayTx = tx.get( props.match.params.id );
+    displayTx = txDAO.get( props.match.params.id );
   } else if ( props.tx ) {
     displayTx = props.tx;
   }

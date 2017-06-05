@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import moment from 'moment';
-import {tx} from '../../data/class-data';
+import {txDAO} from '../data/class-data';
 import TransactionEdit from './TransactionEdit';
 
 class TransactionEditContainer extends Component {
@@ -12,7 +12,7 @@ class TransactionEditContainer extends Component {
     let displayTx = null;
 
     if ( props.match.params.id ) {
-      displayTx = tx.get( props.match.params.id );
+      displayTx = txDAO.get( props.match.params.id );
     } else if ( props.tx ) {
       displayTx = props.tx;
     }
@@ -30,7 +30,7 @@ class TransactionEditContainer extends Component {
   handleSave(txData) {
     console.debug('Invoked TransactionEditContainer.handleSave()');
 
-    let editedTx = tx.get(txData.id);
+    let editedTx = txDAO.get(txData.id);
 
     editedTx.payeeId = txData.payeeId;
     editedTx.accountId = txData.accountId;

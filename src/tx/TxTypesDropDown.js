@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {staticData} from '../../data/class-data';
+import {staticData} from '../data/class-data';
 import CustomDropDown from '../CustomDropDown';
 
 class TxTypesDropDown extends Component {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TransactionList from './TransactionList';
 import TransactionDetail from './TransactionDetail';
-import {txDAO} from '../../data/class-data';
+import {txDAO} from '../data/class-data';
 
 class Transactions extends Component {
   constructor( props ) {
