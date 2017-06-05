@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {accounts} from '../data/class-data';
+import {accountsDAO} from './data/class-data';
 import CustomDropDown from './CustomDropDown';
 
 class AccountsDropDown extends Component {
   constructor( props ) {
     super( props );
-    this.accounts = accounts.list( { personId: props.personId } );
+    this.accounts = accountsDAO.list( { personId: props.personId } );
 
     this.state = {
       value: props.value

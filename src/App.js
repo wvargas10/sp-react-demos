@@ -9,7 +9,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/css/bootstrap-theme.css';
 import './css/local.css'
 
-import {txDAO, peopleDAO} from '../data/class-data';
+import {txDAO, peopleDAO} from './data/class-data';
 import routes from './routes';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
 
@@ -29,7 +29,7 @@ class App extends Component {
         <div>
           <nav className="navbar navbar-default">
             <div className="navbar-header">
-              <a href="#" className="navbar-brand">Banking</a>
+              <a className="navbar-brand">Banking</a>
             </div>
             <div className="collapse navbar-collapse">
               <ul className="nav navbar-nav">

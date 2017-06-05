@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {payees} from '../data/class-data';
+import {payeesDAO} from './data/class-data';
 import CustomDropDown from './CustomDropDown';
 
 class PayeesDropDown extends Component {
   constructor( props ) {
     super( props );
-    this.payees = payees.list();
+    this.payees = payeesDAO.list();
 
     this.state = {
       value: props.value
