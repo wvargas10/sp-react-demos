@@ -6,7 +6,7 @@ function Demos( { routes } ) {
   return (
     <div>
       <div className="row">
-        <div className="col-md-3" style={{ borderRight: '2px solid black' }}>
+        <div className="col-md-3">
           <h3>Demos</h3>
           <ul>
             { routes.map( (route, i) => {
@@ -14,7 +14,7 @@ function Demos( { routes } ) {
             } ) }
           </ul>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8" style={{ borderLeft: '2px solid black' }}>
           {routes.map( ( route, i ) => (
             <RouteWithSubRoutes key={i} {...route}/>
           ) )}
