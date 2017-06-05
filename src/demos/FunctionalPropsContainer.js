@@ -1,7 +1,7 @@
 import React from 'react';
 import FunctionalProps from './FunctionalProps';
 
-function FunctionalPropsContainer( props ) {
+const FunctionalPropsContainer = ( props ) => {
   return (
     <FunctionalProps name="John"/>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FunctionalProps( props ) {
+const FunctionalProps = ( props ) => {
   return (
     <div>
       <h3>Functional properties</h3>
