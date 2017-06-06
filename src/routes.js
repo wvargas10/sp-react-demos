@@ -8,6 +8,8 @@ import JSXExamples from './demos/JSXExamples';
 import TreeComponent from './demos/TreeComponent';
 import ConditionalDemo from './demos/ConditionalDemo';
 import EventHandling from './demos/EventHandling';
+import UsingState from './demos/UsingState';
+import CustomEvents from './demos/CustomEvents';
 
 const routes = [
   {
@@ -57,6 +59,16 @@ const routes = [
         path: '/demos/event-handling',
         component: EventHandling,
         label: 'Event Handling'
+      },
+      {
+        path: '/demos/using-state',
+        component: UsingState,
+        label: 'Using State'
+      },
+      {
+        path: '/demos/custom-events',
+        component: CustomEvents,
+        label: 'Custom Events'
       }
     ]
   }
