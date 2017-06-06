@@ -93,3 +93,5 @@ const ButtonBarInline = ( { onIncrement, onDecrement } ) => {
     </div>
   )
 };
+
+export {Counter, ButtonBar, ButtonBarHandler, ButtonBarInline};
