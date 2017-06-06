@@ -2,12 +2,12 @@ import React from 'react';
 import {shallow, mount} from 'enzyme';
 import renderer from 'react-test-renderer';
 import CustomDropDown from '../CustomDropDown';
-import {people} from '../../../data/class-data';
+import {peopleDAO} from '../data/class-data';
 
 let personList;
 
 beforeEach( () => {
-  personList = people.list();
+  personList = peopleDAO.list();
 } );
 
 test( 'CustomDropDown single labels render correctly', () => {

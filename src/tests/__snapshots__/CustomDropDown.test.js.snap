@@ -1,98 +1,130 @@
-exports[`test CustomDropDown placeholder snapshot 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomDropDown placeholder snapshot 1`] = `
 <select
-  onChange={[Function]}>
+  className={undefined}
+  name={undefined}
+  onChange={[Function]}
+  value="203"
+>
   <option
-    value="">
+    value=""
+  >
     Select a person
   </option>
   <option
-    value={201}>
+    value="201"
+  >
     Sparks
   </option>
   <option
-    value={202}>
+    value="202"
+  >
     Trent
   </option>
   <option
-    value={203}>
+    value="203"
+  >
     Hawksmoor
   </option>
   <option
-    value={204}>
+    value="204"
+  >
     Thornedike
   </option>
   <option
-    value={205}>
+    value="205"
+  >
     Cortez
   </option>
   <option
-    value={206}>
+    value="206"
+  >
     Li-Min
   </option>
   <option
-    value={207}>
+    value="207"
+  >
     Jerusalem
   </option>
   <option
-    value={208}>
+    value="208"
+  >
     Wagner
   </option>
   <option
-    value={209}>
+    value="209"
+  >
     Snow
   </option>
   <option
-    value={210}>
+    value="210"
+  >
     Chase
   </option>
 </select>
 `;
 
-exports[`test CustomDropDown snapshot test 1`] = `
+exports[`CustomDropDown snapshot test 1`] = `
 <select
-  onChange={[Function]}>
+  className={undefined}
+  name={undefined}
+  onChange={[Function]}
+  value="203"
+>
   <option
-    value="">
+    value=""
+  >
     Please select an item below
   </option>
   <option
-    value={201}>
+    value="201"
+  >
     Sparks
   </option>
   <option
-    value={202}>
+    value="202"
+  >
     Trent
   </option>
   <option
-    value={203}>
+    value="203"
+  >
     Hawksmoor
   </option>
   <option
-    value={204}>
+    value="204"
+  >
     Thornedike
   </option>
   <option
-    value={205}>
+    value="205"
+  >
     Cortez
   </option>
   <option
-    value={206}>
+    value="206"
+  >
     Li-Min
   </option>
   <option
-    value={207}>
+    value="207"
+  >
     Jerusalem
   </option>
   <option
-    value={208}>
+    value="208"
+  >
     Wagner
   </option>
   <option
-    value={209}>
+    value="209"
+  >
     Snow
   </option>
   <option
-    value={210}>
+    value="210"
+  >
     Chase
   </option>
 </select>

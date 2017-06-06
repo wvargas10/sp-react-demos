@@ -15,7 +15,7 @@ class CustomDropDown extends Component {
 
     this.domProps = {
       className: props.className,
-      name: props.name,
+      name     : props.name,
       onChange : props.onChange,
     };
 
