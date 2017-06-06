@@ -7,6 +7,7 @@ import ReduxCounter from './demos/ReduxCounter';
 import JSXExamples from './demos/JSXExamples';
 import TreeComponent from './demos/TreeComponent';
 import ConditionalDemo from './demos/ConditionalDemo';
+import EventHandling from './demos/EventHandling';
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
         path: '/demos/conditional-demo',
         component: ConditionalDemo,
         label: 'Using components conditionally'
+      },
+      {
+        path: '/demos/event-handling',
+        component: EventHandling,
+        label: 'Event Handling'
       }
     ]
   }
