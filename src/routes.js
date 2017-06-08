@@ -10,6 +10,9 @@ import ConditionalDemo from './demos/ConditionalDemo';
 import EventHandling from './demos/EventHandling';
 import UsingState from './demos/UsingState';
 import CustomEvents from './demos/CustomEvents';
+import PropTypesContainer from './demos/PropTypesDemo';
+import ListsAndKeys from './demos/ListsAndKeys';
+import SortingLists from './demos/SortingLists';
 
 const routes = [
   {
@@ -69,6 +72,21 @@ const routes = [
         path: '/demos/custom-events',
         component: CustomEvents,
         label: 'Custom Events'
+      },
+      {
+        path: '/demos/prop-types',
+        component: PropTypesContainer,
+        label: 'PropTypes Demo'
+      },
+      {
+        path: '/demos/lists-and-keys',
+        component: ListsAndKeys,
+        label: 'Lists and keys'
+      },
+      {
+        path: '/demos/sorting-lists',
+        component: SortingLists,
+        label: 'Sorting Lists'
       }
     ]
   }
