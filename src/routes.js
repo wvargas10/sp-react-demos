@@ -13,6 +13,9 @@ import CustomEvents from './demos/CustomEvents';
 import PropTypesContainer from './demos/PropTypesDemo';
 import ListsAndKeys from './demos/ListsAndKeys';
 import SortingLists from './demos/SortingLists';
+import PersonListContainer from './demos/ReactNoReduxNoThunk';
+import DynamicPersonListContainer from './demos/ReactNoReduxFetch';
+import ReduxPersonListContainer from './demos/ReactReduxFetch';
 
 const routes = [
   {
@@ -26,67 +29,82 @@ const routes = [
       {
         path     : '/demos/functional-props',
         component: FunctionalPropsContainer,
-        label: 'Functional Component with props'
+        label    : 'Functional Component with props'
       },
       {
         path     : '/demos/class-props',
         component: ClassPropsContainer,
-        label: 'Class Component with props'
+        label    : 'Class Component with props'
       },
       {
         path     : '/demos/passing-data',
         component: PassingData,
-        label: 'Passing Data'
+        label    : 'Passing Data'
       },
       {
-        path: '/demos/redux-counter',
+        path     : '/demos/redux-counter',
         component: ReduxCounter,
-        label: 'Incremental counter with Redux'
+        label    : 'Incremental counter with Redux'
       },
       {
-        path: '/demos/jsx-examples',
+        path     : '/demos/jsx-examples',
         component: JSXExamples,
-        label: 'JSX Examples'
+        label    : 'JSX Examples'
       },
       {
-        path: '/demos/tree-component',
+        path     : '/demos/tree-component',
         component: TreeComponent,
-        label: 'TreeComponent'
+        label    : 'TreeComponent'
       },
       {
-        path: '/demos/conditional-demo',
+        path     : '/demos/conditional-demo',
         component: ConditionalDemo,
-        label: 'Using components conditionally'
+        label    : 'Using components conditionally'
       },
       {
-        path: '/demos/event-handling',
+        path     : '/demos/event-handling',
         component: EventHandling,
-        label: 'Event Handling'
+        label    : 'Event Handling'
       },
       {
-        path: '/demos/using-state',
+        path     : '/demos/using-state',
         component: UsingState,
-        label: 'Using State'
+        label    : 'Using State'
       },
       {
-        path: '/demos/custom-events',
+        path     : '/demos/custom-events',
         component: CustomEvents,
-        label: 'Custom Events'
+        label    : 'Custom Events'
       },
       {
-        path: '/demos/prop-types',
+        path     : '/demos/prop-types',
         component: PropTypesContainer,
-        label: 'PropTypes Demo'
+        label    : 'PropTypes Demo'
       },
       {
-        path: '/demos/lists-and-keys',
+        path     : '/demos/lists-and-keys',
         component: ListsAndKeys,
-        label: 'Lists and keys'
+        label    : 'Lists and keys'
       },
       {
-        path: '/demos/sorting-lists',
+        path     : '/demos/sorting-lists',
         component: SortingLists,
-        label: 'Sorting Lists'
+        label    : 'Sorting Lists'
+      },
+      {
+        path     : '/demos/thunk-one',
+        component: PersonListContainer,
+        label    : '(Thunk 1) List of people'
+      },
+      {
+        path     : '/demos/thunk-two',
+        component: DynamicPersonListContainer,
+        label    : '(Thunk 2) Dynamically generated list of people'
+      },
+      {
+        path     : '/demos/thunk-three',
+        component: ReduxPersonListContainer,
+        label    : '(Thunk 3) List of people with Redux and Thunk'
       }
     ]
   }
