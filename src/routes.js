@@ -92,6 +92,11 @@ const routes = [
         label    : 'Sorting Lists'
       },
       {
+        path     : '/demos/redux-counter',
+        component: ReduxCounter,
+        label    : 'Redux Counter'
+      },
+      {
         path     : '/demos/thunk-one',
         component: PersonListContainer,
         label    : '(Thunk 1) List of people'
