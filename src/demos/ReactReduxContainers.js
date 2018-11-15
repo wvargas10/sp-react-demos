@@ -40,31 +40,44 @@ const Counter = ( { value, onIncrement, onDecrement } ) => {
   );
 };
 
-const mapStateToProps = function( state ) {
-  return {
-    value: state
-  };
-};
-
-const mapDispatchToProps = function( dispatch ) {
-  return {
-    onIncrement: () => dispatch( addOne() ),
-    onDecrement: () => dispatch( subtractOne() )
-  };
-};
-
-const ReduxCounter = connect( mapStateToProps, mapDispatchToProps )( Counter );
-
 // Store
 const store = createStore( reducer );
 
-const ConnectedComponent = () => (
-  <Provider store={ store }>
+const ContainerComponent = ( props ) => {
+
+  console.log( 'Props: ', props );
+
+  const handleIncrement = () => {
+    props.dispatch( addOne() );
+  };
+
+  const handleDecrement = () => {
+    props.dispatch( subtractOne() );
+  };
+
+  return (
     <div>
-      <h2>Connected component: </h2>
-      <ReduxCounter/>
+      <h2>Connected container</h2>
+      <p>(This container has been connected, but &lt;Counter/&gt; has not</p>
+      <Counter value={ props.value }
+               onIncrement={ handleIncrement }
+               onDecrement={ handleDecrement }
+      />
     </div>
+  );
+};
+
+const mapStateToProps = ( state ) => ( {
+  value: state
+} );
+
+const ConnectedContainer = connect( mapStateToProps )( ContainerComponent );
+
+const ConnectedWrapper = () => (
+  <Provider store={ store }>
+    <ConnectedContainer/>
   </Provider>
+
 );
 
-export default ConnectedComponent;
+export default ConnectedWrapper;

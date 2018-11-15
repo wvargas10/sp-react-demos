@@ -29,7 +29,7 @@ class App extends Component {
         <div>
           <nav className="navbar navbar-default">
             <div className="navbar-header">
-              <a className="navbar-brand">Banking</a>
+              <a className="navbar-brand" href="/">Banking</a>
             </div>
             <div className="collapse navbar-collapse">
               <ul className="nav navbar-nav">

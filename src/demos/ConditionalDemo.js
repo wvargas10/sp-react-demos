@@ -15,6 +15,8 @@ export default ConditionalDemo;
 
 const ConditionalContainer = ( props ) => {
   let results = null;
+
+  // eslint-disable-next-line
   if ( Boolean( eval( props.condition ) ) ) {
     results = <TrueComponent/>;
   } else {
