@@ -18,7 +18,7 @@
   "author": "John Paxton <pax@speedingplanet.com>",
   "license": "ISC",
   "devDependencies": {
-    "jest-cli": "^23.6.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "react-scripts": "^2.1.1",
     "sinon": "^7.1.1"
   },

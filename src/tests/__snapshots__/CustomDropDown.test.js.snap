@@ -2,8 +2,6 @@
 
 exports[`CustomDropDown placeholder snapshot 1`] = `
 <select
-  className={undefined}
-  name={undefined}
   onChange={[Function]}
   value="203"
 >
@@ -67,8 +65,6 @@ exports[`CustomDropDown placeholder snapshot 1`] = `
 
 exports[`CustomDropDown snapshot test 1`] = `
 <select
-  className={undefined}
-  name={undefined}
   onChange={[Function]}
   value="203"
 >
