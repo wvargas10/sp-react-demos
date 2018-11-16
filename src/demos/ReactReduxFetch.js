@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
-import {combineReducers, createStore, applyMiddleware} from 'redux';
+import React, { Component } from 'react';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import {Provider, connect} from 'react-redux';
+import { Provider, connect } from 'react-redux';
 
 // Action creators
 const setHasErrored = ( bool ) => {
   return {
-    type      : 'PEOPLE_HAS_ERRORED',
+    type: 'PEOPLE_HAS_ERRORED',
     hasErrored: bool
   };
 };
 
 const setIsLoading = ( bool ) => {
   return {
-    type     : 'PEOPLE_IS_LOADING',
+    type: 'PEOPLE_IS_LOADING',
     isLoading: bool
   };
 };
@@ -80,7 +80,7 @@ const peopleApp = combineReducers( { people, peopleHasErrored, peopleIsLoading }
 
 // Store
 const configureStore = ( initialState ) => {
-  return createStore( peopleApp, initialState, applyMiddleware( thunk ) )
+  return createStore( peopleApp, initialState, applyMiddleware( thunk ) );
 };
 
 const store = configureStore();
@@ -94,30 +94,30 @@ class PersonList extends Component {
     if ( this.props.isLoading ) {
       return (
         <p>Loading...</p>
-      )
+      );
     } else if ( this.props.hasErrored ) {
       return (
         <h3>Something has gone terribly wrong!</h3>
-      )
+      );
     }
 
     return (
       <ul>
         {
           this.props.people.map( person => {
-            return <li>{person.firstName} {person.lastName}</li>
+            return <li key={ person.id }>{ person.firstName } { person.lastName }</li>;
           } )
         }
       </ul>
-    )
+    );
   }
 }
 
 const mapStateToProps = ( state ) => {
   return {
-    people    : state.people,
+    people: state.people,
     hasErrored: state.peopleHasErrored,
-    isLoading : state.peopleIsLoading
+    isLoading: state.peopleIsLoading
   };
 };
 
@@ -133,13 +133,13 @@ class ReduxPersonListContainer extends Component {
 
   render() {
     return (
-      <Provider store={store}>
+      <Provider store={ store }>
         <section>
           <h3>List of people</h3>
           <PersonList/>
         </section>
       </Provider>
-    )
+    );
   }
 }
 

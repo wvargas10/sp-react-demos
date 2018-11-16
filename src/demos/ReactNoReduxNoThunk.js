@@ -5,7 +5,7 @@ const PersonList = (props) => {
     <ul>
       {
         props.people.map( person => {
-          return <li>{person.firstName} {person.lastName}</li>
+          return <li key={person.id}>{person.firstName} {person.lastName}</li>
         })
       }
     </ul>

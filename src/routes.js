@@ -123,17 +123,17 @@ const routes = [
       {
         path: '/demos/thunk-one',
         component: PersonListContainer,
-        label: '(Thunk 1) List of people'
+        label: '(Thunk part 1) List of people (no async)'
       },
       {
         path: '/demos/thunk-two',
         component: DynamicPersonListContainer,
-        label: '(Thunk 2) Dynamically generated list of people'
+        label: '(Thunk part 2) List of people (async, no thunk, no Redux)'
       },
       {
         path: '/demos/thunk-three',
         component: ReduxPersonListContainer,
-        label: '(Thunk 3) List of people with Redux and Thunk'
+        label: '(Thunk part 3) List of people with Redux and Thunk'
       }
     ]
   }
