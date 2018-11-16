@@ -18,6 +18,8 @@ import DynamicPersonListContainer from './demos/ReactNoReduxFetch';
 import ReduxPersonListContainer from './demos/ReactReduxFetch';
 import ConnectedComponent from './demos/ConnectedComponent';
 import ReduxContainer from './demos/ReactReduxContainers';
+import ReduxMiddlewareLogger from './demos/ReduxMiddlewareLogger';
+import ReduxDevtools from './demos/ReduxDevtools';
 
 const routes = [
   {
@@ -107,6 +109,16 @@ const routes = [
         path: '/demos/redux-container',
         component: ReduxContainer,
         label: 'Redux-connected container'
+      },
+      {
+        path: '/demos/redux-middleware-logger',
+        component: ReduxMiddlewareLogger,
+        label: 'Redux with middleware'
+      },
+      {
+        path: '/demos/redux-devtools',
+        component: ReduxDevtools,
+        label: 'Redux devtools'
       },
       {
         path: '/demos/thunk-one',
