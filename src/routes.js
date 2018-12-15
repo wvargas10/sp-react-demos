@@ -20,6 +20,7 @@ import ConnectedComponent from './demos/ConnectedComponent';
 import ReduxContainer from './demos/ReactReduxContainers';
 import ReduxMiddlewareLogger from './demos/ReduxMiddlewareLogger';
 import ReduxDevtools from './demos/ReduxDevtools';
+import LifecycleMethods from './demos/LifecycleMethods';
 
 const routes = [
   {
@@ -94,6 +95,11 @@ const routes = [
         path: '/demos/sorting-lists',
         component: SortingLists,
         label: 'Sorting Lists'
+      },
+      {
+        path: '/demos/lifecycle-methods',
+        component: LifecycleMethods,
+        label: 'Lifecycle Methods'
       },
       {
         path: '/demos/redux-counter',

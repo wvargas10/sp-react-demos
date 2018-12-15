@@ -16,7 +16,7 @@ const subtractOne = () => {
 
 // Reducer
 const reducer = ( state = 0, action ) => {
-  console.log( 'Called reducer' );
+  // console.log( 'Called reducer' );
   switch ( action.type ) {
     case 'INCREMENT':
       return state + 1;

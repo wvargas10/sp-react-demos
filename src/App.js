@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   NavLink
@@ -7,9 +7,9 @@ import {
 // Import Bootstrap, make it available to all sub-components
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/css/bootstrap-theme.css';
-import './css/local.css'
+import './css/local.css';
 
-import {txDAO, peopleDAO} from './data/class-data';
+import { peopleDAO } from './data/class-data';
 import routes from './routes';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
 
@@ -20,7 +20,7 @@ class App extends Component {
 
     this.routes = routes;
 
-    console.log( 'There are %d transactions.', txDAO.size() );
+    // console.log( 'There are %d transactions.', txDAO.size() );
   }
 
   render() {
@@ -40,9 +40,9 @@ class App extends Component {
           </nav>
 
           <div>
-            {this.routes.map( ( route, index ) => (
-              <RouteWithSubRoutes key={index} {...route}/>
-            ) )}
+            { this.routes.map( ( route, index ) => (
+              <RouteWithSubRoutes key={ index } { ...route }/>
+            ) ) }
           </div>
         </div>
       </Router>
