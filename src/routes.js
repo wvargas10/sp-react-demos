@@ -21,6 +21,10 @@ import ReduxContainer from './demos/ReactReduxContainers';
 import ReduxMiddlewareLogger from './demos/ReduxMiddlewareLogger';
 import ReduxDevtools from './demos/ReduxDevtools';
 import LifecycleMethods from './demos/LifecycleMethods';
+import PeopleDAODemo from './demos/PeopleDAODemo';
+import BasicRouting from './demos/BasicRouting';
+import ProgrammaticRouting from './demos/ProgrammaticRouting';
+import RedirectedRouting from './demos/RedirectedRouting';
 
 const routes = [
   {
@@ -100,6 +104,26 @@ const routes = [
         path: '/demos/lifecycle-methods',
         component: LifecycleMethods,
         label: 'Lifecycle Methods'
+      },
+      {
+        path: '/demos/people-dao',
+        component: PeopleDAODemo,
+        label: 'People DAO'
+      },
+      {
+        path: '/demos/basic-routing',
+        component: BasicRouting,
+        label: 'Basic Routing'
+      },
+      {
+        path: '/demos/programmatic-routing',
+        component: ProgrammaticRouting,
+        label: 'Programmatic Routing'
+      },
+      {
+        path: '/demos/redirected-routing',
+        component: RedirectedRouting,
+        label: 'Redirected Routing'
       },
       {
         path: '/demos/redux-counter',
