@@ -25,6 +25,9 @@ import PeopleDAODemo from './demos/PeopleDAODemo';
 import BasicRouting from './demos/BasicRouting';
 import ProgrammaticRouting from './demos/ProgrammaticRouting';
 import RedirectedRouting from './demos/RedirectedRouting';
+import RoutingParameters from './demos/RoutingParameters';
+import ControlledComponents from './demos/ControlledComponents';
+import UncontrolledComponents from './demos/UncontrolledComponents';
 
 const routes = [
   {
@@ -124,6 +127,21 @@ const routes = [
         path: '/demos/redirected-routing',
         component: RedirectedRouting,
         label: 'Redirected Routing'
+      },
+      {
+        path: '/demos/routing-params',
+        component: RoutingParameters,
+        label: 'Routing Parameters'
+      },
+      {
+        path: '/demos/controlled-components',
+        component: ControlledComponents,
+        label: 'Controlled Components'
+      },
+      {
+        path: '/demos/uncontrolled-components',
+        component: UncontrolledComponents,
+        label: 'Uncontrolled Components'
       },
       {
         path: '/demos/redux-counter',
